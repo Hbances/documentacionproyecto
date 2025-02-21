@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Documentación del Proyecto</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- Barra de Navegación con Submenú -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi bi-raspberry-pi"></i> Raspberry PI
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="instalacioSO.html">
+                                <i class="bi bi-download"></i> Instalació SO
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="serveisXarxa.html">
+                                <i class="bi bi-router"></i> Serveis de xarxa
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Apartado: Citadel Interfície Web -->
+        <div class="container my-5">
+            <header class="bg-primary text-white " ></header>
+                <h2 class="text-center mb-4">Citadel Interfície Web</h2>
+                <p class="lead text-center mb-5">Configuració del servidor de correu electrònic de Citadel Web</p>
+            </header>
+            
+            <div class="accordion" id="citadelWebAccordion">
+
+                <!-- Paso 1: Accés a la interfície web -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb1" aria-expanded="true" aria-controls="collapseWeb1">
+                            <i class="bi bi-browser-chrome me-2"></i> Pas 1: Accés a la interfície web
+                        </button>
+                    </h2>
+                    <div id="collapseWeb1" class="accordion-collapse collapse show" aria-labelledby="webPaso1"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Anem a carregar la interfície web de Citadel. Per fer-ho, dirigiu-vos a l'adreça
+                                    IP del
+                                    vostre Raspberry Pi al vostre navegador web preferit. En el meu cas, aniria a
+                                    http://192.168.137.69:8080
+
+                                </strong></p>
+
+                            <img src="imgs/Citadel/interficie/captura1.png" alt="Accés a la interfície web"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb1">
+                            <br>
+                            <hr>
+                            <p>Si no teniu l'adreça IP de Raspberry Pi, podeu escriure <strong>hostname-l</strong> en la
+                                terminal de Raspberry Pi per obtenir la vostra adreça IP local.
+
+                                Inicieu sessió utilitzant el nom d'usuari d'administrador i la contrasenya
+                                d'administrador que heu configurat durant el procés d'instal·lació.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Configuració de la pàgina d'inici -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb2" aria-expanded="false" aria-controls="collapseWeb2">
+                            <i class="bi bi-house-door me-2"></i> Pas 2: Configuració de la pàgina d'inici
+                        </button>
+                    </h2>
+                    <div id="collapseWeb2" class="accordion-collapse collapse" aria-labelledby="webPaso2"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>A continuació hauríeu de veure el panell predeterminat i podeu canviar la pàgina
+                                    d'inici obrint una altra pàgina i clicking el
+                                    <code>“ Make this my start page”</code> ubicat a la
+                                    cantonada superior dreta.</strong></p>
+                            <p>Ara, només cliqueu <code>“Administration”</code> a la barra lateral.</p>
+                            <img src="imgs/Citadel/interficie/captura2.png" alt="Configuració de la pàgina d'inici"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3: Gestió d'usuaris -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb3" aria-expanded="false" aria-controls="collapseWeb3">
+                            <i class="bi bi-gear me-2"></i> Pas 3: menú d'administració del sistema
+                        </button>
+                    </h2>
+                    <div id="collapseWeb3" class="accordion-collapse collapse" aria-labelledby="webPaso3"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p>Ara estem al menú d'administració del sistema, hi ha una àmplia varietat d'opcions
+                                diferents aquí, però el que busquem és <strong>“Edit site-wide configuration“,</strong>
+                                i així click
+                                successivament.</p>
+
+                            <img src="imgs/Citadel/interficie/captura3.png" alt="Gestió d'usuaris"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4: Configuració del correu electrònic -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb4" aria-expanded="false" aria-controls="collapseWeb4">
+                            <i class="bi bi-arrow-repeat me-2"></i> Pas 4: cambios en la configuració del EDIT SITE-WIDE
+                        </button>
+                    </h2>
+                    <div id="collapseWeb4" class="accordion-collapse collapse" aria-labelledby="webPaso4"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>A continuació en aquesta pantalla haurem de fer alguns canvis perquè tot
+                                    funcioni.</strong></p>
+
+                            <p>Ara hem de canviar el “Fully Qualified Domain Name” al domini personalitzat que planegem
+                                utilitzar per al nostre correu electrònic.
+
+                                En el nostre cas, ho establirem a <strong>“mail.local“.</strong></p>
+                            <img src="imgs/Citadel/interficie/captura4.png" alt="Configuració del correu electrònic"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb4">
+                            <br>
+                            <hr>
+                            <p>Un cop fet això, clic a la <strong>"SMTP pestanya ”.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5: Monitorització del sistema -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb5" aria-expanded="false" aria-controls="collapseWeb5">
+                            <i class="bi bi-window me-2"></i> Pas 5: Cambios en SMTP
+                        </button>
+                    </h2>
+                    <div id="collapseWeb5" class="accordion-collapse collapse" aria-labelledby="webPaso5"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>A continuació en aquesta pantalla prengui nota dels ports esmentats aquí,
+                                    necessitarem reenviar-los per permetre que el servidor rebi correus electrònics a
+                                    través de SMTP.
+                                </strong></p>
+
+                            <img src="imgs/Citadel/interficie/captura5.png" alt="Monitorització del sistema"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb5">
+                            <br>
+                            <hr>
+                            <p>Un cop fet això, feu clic a clic botó <strong>“ Save Changes”,</strong> després clic
+                                <strong>“ Administration”</strong> a la barra lateral.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 6: Configuració de dominis -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb6" aria-expanded="false" aria-controls="collapseWeb6">
+                            <i class="bi bi-arrow-return-left me-2"></i> Pas 6: tornem al <strong>“System Administration
+                                Menu”</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseWeb6" class="accordion-collapse collapse" aria-labelledby="webPaso6"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>A continuació tornem al “System Administration Menu”, cliqueu “ Domain names and
+                                    internet mail configuration“.</strong></p>
+                            <p>En aquesta opció ens portarà al menú que utilitzarem per afegir noms de domini
+                                addicionals a Citadel.</p>
+
+                            <img src="imgs/Citadel/interficie/captura6.png" alt="Configuració de dominis"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb6">
+                            <br>
+                            <hr>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 7: Configuració de filtres de correu -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb7" aria-expanded="false" aria-controls="collapseWeb7">
+                            <i class="bi bi-funnel me-2"></i> Pas 7: Pantalla Domai names and internet mail
+                            configuration
+                        </button>
+                    </h2>
+                    <div id="collapseWeb7" class="accordion-collapse collapse" aria-labelledby="webPaso7"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Ara en aquesta pantalla, sota “ Local host aliases”, escriviu el nom de domini
+                                    que voleu utilitzar i després click Add botón.</strong></p>
+
+                            <p>Quan això estigui fet , clicar <code>“ Administration”</code> a la barra lateral.</p>
+                            <img src="imgs/Citadel/interficie/captura7.png" alt="Configuració de filtres de correu"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb7">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 8: Configuració de certificats SSL -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb8" aria-expanded="false" aria-controls="collapseWeb8">
+                            <i class="bi bi-arrow-return-left me-2"></i> Pas 8: continuació tornem a aquesta pantalla
+                            administració
+                        </button>
+                    </h2>
+                    <div id="collapseWeb8" class="accordion-collapse collapse" aria-labelledby="webPaso8"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>A continuació tornem a aquesta pantalla i hem de fer clic a clic “Restart
+                                    Now” sota “Shutdown Citadel”. Això garanteix que tots els nostres canvis de
+                                    configuració es carregaran.</strong></p>
+
+                            <img src="imgs/Citadel/interficie/captura8.png" alt="Configuració de certificats SSL"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb8">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 9: Configuració de còpies de seguretat -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb9" aria-expanded="false" aria-controls="collapseWeb9">
+                            <i class="bi bi-people me-2"></i> Pas 9: Afegirem un nou usuari o eliminar un usuari
+                        </button>
+                    </h2>
+                    <div id="collapseWeb9" class="accordion-collapse collapse" aria-labelledby="webPaso9"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>A continuació farem click a administració i després click a “user account
+                                    managment” i click a “add, change delete user accounts”</strong></p>
+
+                            <p>Afegirem un nou usuari i farem unes proves de correu electrònic amb el nou usuari</p>
+
+                            <img src="imgs/Citadel/interficie/captura8.png" alt="Configuració de còpies de seguretat"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb9">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 10: Configuració de logs i auditoria -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb10" aria-expanded="false" aria-controls="collapseWeb10">
+                            <i class="bi bi-person-plus me-2"></i> Pas 10: Afegirem un usuari nou
+                        </button>
+                    </h2>
+                    <div id="collapseWeb10" class="accordion-collapse collapse" aria-labelledby="webPaso10"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Afegirem un usuari nou en aquest cas, <code>“henriBances”</code>.</strong></p>
+
+                            <img src="imgs/Citadel/interficie/captura9.png" alt="Configuració de logs i auditoria"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb10">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 11: Configuració de plugins -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso11">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb11" aria-expanded="false" aria-controls="collapseWeb11">
+                            <i class="bi bi-person-fill-gear"></i> Pas 11: Procedirem a crear l'usuari que considerem
+                            oportú
+                        </button>
+                    </h2>
+                    <div id="collapseWeb11" class="accordion-collapse collapse" aria-labelledby="webPaso11"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Procedirem a crear l'usuari que considerem oportú en el nostre cas,
+                                    <code>"henriBances",</code> i omplirem tots els camps requerits.</strong></p>
+
+                            <img src="imgs/Citadel/interficie/captura10.png" alt="Configuració de plugins"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb11">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 12: Configuració de l'antivirus -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso12">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb12" aria-expanded="false" aria-controls="collapseWeb12">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Pas 12: login amb l'usuari
+                        </button>
+                    </h2>
+                    <div id="collapseWeb12" class="accordion-collapse collapse" aria-labelledby="webPaso12"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Fem el login amb l'usuari creat i el password</strong></p>
+
+                            <img src="imgs/Citadel/interficie/captura11.png" alt="Configuració de l'antivirus"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb12">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 13: Configuració de l'API -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso13">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb13" aria-expanded="false" aria-controls="collapseWeb13">
+                            <i class="bi bi-envelope-paper me-2"></i> Pas 13: Configuració de E-mail
+                        </button>
+                    </h2>
+                    <div id="collapseWeb13" class="accordion-collapse collapse" aria-labelledby="webPaso13"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p>A continuació, anem a la barra lateral esquerra i fem clic a <strong>"MAIL"</strong> i,
+                                posteriorment, a <strong>"ESCRIURE CORREU".</strong></p>
+
+                            <img src="imgs/Citadel/interficie/captura12.png" alt="Configuració de l'API"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb13">
+                            <br>
+                            <hr>
+                            <p>A continuació, escrivim el correu electrònic que, en aquest cas, serà de comunicació
+                                interna.</p>
+                            <img src="imgs/Citadel/interficie/captura13.png" alt="Configuració de l'API"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalWeb13">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 14: Configuració de l'autenticació externa -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="webPaso14">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseWeb14" aria-expanded="false" aria-controls="collapseWeb14">
+                            <i class="bi bi-envelope-check me-2"></i> Pas 14: Configuració de l'autenticació externa
+                        </button>
+                    </h2>
+                    <div id="collapseWeb14" class="accordion-collapse collapse" aria-labelledby="webPaso14"
+                        data-bs-parent="#citadelWebAccordion">
+                        <div class="accordion-body">
+                            <p>Per últim, revisem si el missatge s'ha enviat correctament i comprovem que es visualitzi
+                                adequadament.</p>
+
+                            <img src="imgs/Citadel/interficie/captura14.png"
+                                alt="Configuració de l'autenticació externa" class="img-fluid rounded shadow mt-3"
+                                data-bs-toggle="modal" data-bs-target="#modalWeb14">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de Página -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; 2025 Mi Proyecto | Creado por Andy Benites</p>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

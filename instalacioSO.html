@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>instalacioSO</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- Barra de Navegación con Submenú -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Raspberry PI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="instalacioSO.html">Instalació SO</a></li>
+
+                        <!-- Submenú de Backups
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-archive"></i> Backups
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="backupsSO.html">Backups SO</a></li>
+                                <li><a class="dropdown-item" href="backups_fitxers_config.html">Backups fitxers configuració</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li class="nav-item"><a class="nav-link" href="serveisXarxa.html">Serveis de xarxa</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sección de Bienvenida -->
+        <header class="bg-primary text-white text-center py-5">
+            <h1>Proyecte amb Raspberry PI 4</h1>
+        </header>
+
+
+        <body class="p-4">
+            <div class="container">
+                <!-- Título -->
+                <h1 class="text-center mb-4">Instal·lació del SO Raspberry PI</h1>
+
+                <!-- Introducción -->
+                <p class="lead text-center mb-5">Per instal·lar el sistema Raspberry Pi, segueix aquests passos.</p>
+
+                <!-- Acordeón para los pasos -->
+                <div class="accordion" id="pasosInstalacion">
+                    <!-- Paso 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                <i class="bi bi-download me-2"></i> Pas 1: Descarregar el SO
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="paso1"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>Descarregueu la darrera versió de <a href="https://www.raspberrypi.com/software"
+                                        target="_blank" class="text-decoration-none">raspberrypi.com/software</a> i
+                                    executeu l'instal·lador.</p>
+                                <img src="imgs/InstalacioSO/img1.jpg" alt="Descàrrega del SO Raspberry PI"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                <i class="bi bi-play-circle me-2"></i> Pas 2: Iniciar Imager
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="paso2"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>Quan hàgiu instal·lat Imager, inicieu l'aplicació fent clic a la icona de
+                                    Raspberry Pi.</p>
+                                <img src="imgs/InstalacioSO/img2.jpg" alt="Inici de l'aplicació Imager"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                <i class="bi bi-device-hdd me-2"></i> Pas 3: Triar Dispositiu
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="paso3"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>Fer clic a <strong>TRIAR DISPOSITIU</strong> i seleccionar el seu model de
+                                    Raspberry Pi de la llista.</p>
+                                <img src="imgs/InstalacioSO/img3.jpg" alt="Selecció del model de Raspberry Pi"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <i class="bi bi-gear me-2"></i> Pas 4: Triar Sistema Operatiu
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="paso4"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>A continuació, feu clic a <strong>Tria el sistema operatiu</strong> i seleccioneu
+                                    el sistema operatiu que voleu instal·lar. En el nostre cas fem servir el
+                                    Raspberry Pi 64.</p>
+                                <img src="imgs/InstalacioSO/img4.jpg" alt="Selecció del sistema operatiu"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                <i class="bi bi-usb-drive me-2"></i> Pas 5: Connectar Emmagatzematge
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="paso5"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>Connecteu un dispositiu d'emmagatzematge preferit a l'ordinador. Per exemple,
+                                    connecteu un USB extern. Després, feu clic a <strong>Tria
+                                        emmagatzematge</strong> i seleccioneu el dispositiu d'emmagatzematge.</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="imgs/InstalacioSO/img5.jpg"
+                                            alt="Connexió del dispositiu d'emmagatzematge"
+                                            class="img-fluid rounded shadow mb-3" data-bs-toggle="modal"
+                                            data-bs-target="#modalImagen5">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="imgs/InstalacioSO/img6.jpg"
+                                            alt="Selecció del dispositiu d'emmagatzematge"
+                                            class="img-fluid rounded shadow mb-3" data-bs-toggle="modal"
+                                            data-bs-target="#modalImagen6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso6">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                <i class="bi bi-arrow-right-circle me-2"></i> Pas 6: Continuar
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="paso6"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>A continuació, feu clic a <strong>Next</strong>.</p>
+                                <img src="imgs/InstalacioSO/img7.jpg" alt="Clic a Next" class="img-fluid rounded shadow"
+                                    data-bs-toggle="modal" data-bs-target="#modalImagen7">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 7 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso7">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                <i class="bi bi-tools me-2"></i> Pas 7: Personalització
+                            </button>
+                        </h2>
+                        <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="paso7"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>En una finestra emergent, Imager us demanarà que apliqueu la personalització del
+                                    sistema operatiu. Us recomanem encaridament que configureu la vostra Raspberry
+                                    Pi a través de la configuració de personalització del sistema operatiu. Feu clic
+                                    al botó <strong>Edita la configuració</strong> per obrir la personalització del
+                                    sistema operatiu.</p>
+                                <p>Si no configureu la vostra Raspberry Pi a través de la configuració de
+                                    personalització del sistema operatiu, el sistema operatiu Raspberry Pi us
+                                    demanarà la mateixa informació en el primer arrencada durant l'assistent de
+                                    configuració. Podeu fer clic al botó <strong>No</strong> per saltar-vos la
+                                    personalització del sistema operatiu.</p>
+                                <p>El menú de personalització del sistema operatiu us permet configurar la vostra
+                                    Raspberry Pi abans del primer arrencada. Podeu preconfigurar:</p>
+                                <ul class="list-group mb-4">
+                                    <li class="list-group-item">Un nom d’usuari i contrasenya</li>
+                                    <li class="list-group-item">Credencials de Wi-Fi</li>
+                                    <li class="list-group-item">El nom d'amfitrió del dispositiu</li>
+                                    <li class="list-group-item">La zona horària</li>
+                                    <li class="list-group-item">La distribució del vostre teclat</li>
+                                    <li class="list-group-item">La connectivitat remota</li>
+                                </ul>
+                                <p>En el nostre cas, optem per editar directament el fitxer de personalització per
+                                    configurar la nostra Raspberry Pi. Aquest enfocament ens permet realitzar
+                                    ajustaments precisos i controlar completament els paràmetres del sistema
+                                    operatiu abans de la primera arrencada.</p>
+                                <img src="imgs/InstalacioSO/img8.jpg" alt="Personalització del sistema operatiu"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen8">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paso 8 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso8">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                <i class="bi bi-tools me-2"></i> Pas 8: Configuració de Serveis
+                            </button>
+                        </h2>
+                        <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="paso8"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>La pestanya Serveis inclou configuracions per ajudar-vos a connectar-vos al
+                                    vostre Raspberry Pi de forma remota.</p>
+                                <p>Si teniu previst utilitzar el vostre Raspberry Pi de forma remota a través de la
+                                    vostra xarxa, marqueu la casella al costat de <strong>Habilita SSH</strong>. Heu
+                                    d'habilitar aquesta opció si teniu previst executar una Raspberry Pi sense
+                                    interfície gràfica.</p>
+                                <p>Trieu l'opció d'autenticació de contrasenya per accedir per SSH al vostre
+                                    Raspberry Pi a través de la xarxa usant el nom d'usuari i la contrasenya que va
+                                    proporcionar a la pestanya general de personalització del sistema operatiu.</p>
+                                <img src="imgs/InstalacioSO/img9.jpg" alt="Serveis" class="img-fluid rounded shadow"
+                                    data-bs-toggle="modal" data-bs-target="#modalImagen9">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 9 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso9">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                <i class="bi bi-gear me-2"></i> Pas 9: Opcions d'Escriptura
+                            </button>
+                        </h2>
+                        <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="paso9"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>La personalització del sistema operatiu també inclou un menú
+                                    d'<strong>Opcions</strong> que us permet configurar el comportament d'Imager
+                                    durant una escriptura.</p>
+                                <p>Aquestes opcions us permeten:</p>
+                                <ul>
+                                    <li>Reproduir un so quan Imager acaba de verificar una imatge.</li>
+                                    <li>Desmuntar automàticament els mitjans d'emmagatzematge després de la
+                                        verificació.</li>
+                                    <li>Deshabilitar la telemetria.</li>
+                                </ul>
+                                <img src="imgs/InstalacioSO/img10.jpg" alt="Opcions d'Escriptura"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 10 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso10">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                                <i class="bi bi-check-circle me-2"></i> Pas 10: Escriptura de la Imatge
+                            </button>
+                        </h2>
+                        <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="paso10"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>Quan hàgiu acabat d'introduir la configuració de personalització del sistema
+                                    operatiu, feu clic a <strong>Desa</strong> per desar la vostra personalització.
+                                </p>
+                                <p>Després, feu clic a <strong>Sí</strong> per aplicar la configuració de
+                                    personalització del sistema operatiu quan escriviu la imatge al dispositiu
+                                    d'emmagatzematge.</p>
+                                <p>Finalment, responeu <strong>Sí</strong> a la finestra emergent "Esteu segur que
+                                    voleu continuar?" per començar a escriure dades al dispositiu d'emmagatzematge.
+                                </p>
+                                <img src="imgs/InstalacioSO/img11.jpg" alt="Escriptura de la Imatge"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen11">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 11 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso11">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                                <i class="bi bi-arrow-right-circle me-2"></i> Pas 11: Procés d'Instal·lació
+                            </button>
+                        </h2>
+                        <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="paso11"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>Un cop confirmada l'escriptura, començarà el procés d'instal·lació de la imatge
+                                    de Raspberry Pi OS.</p>
+                                <img src="imgs/InstalacioSO/img12.jpg" alt="Procés d'Instal·lació"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen12">
+                                <p>Es mostrarà el progrés de la instal·lació.</p>
+                                <img src="imgs/InstalacioSO/img13.jpg" alt="Progrés de la Instal·lació"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen13">
+                                <img src="imgs/InstalacioSO/img14.jpg" alt="Progrés de la Instal·lació"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen14">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paso 12 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="paso12">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                                <i class="bi bi-check-circle me-2"></i> Pas 12: Instal·lació Completa
+                            </button>
+                        </h2>
+                        <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="paso12"
+                            data-bs-parent="#pasosInstalacion">
+                            <div class="accordion-body">
+                                <p>Quan la finestra emergent "Escriptura reeixida" aparegui, la teva imatge s'haurà
+                                    escrit i verificat del tot. Ara estàs a punt per iniciar una Raspberry Pi des
+                                    del dispositiu d’emmagatzematge!</p>
+                                <img src="imgs/InstalacioSO/img15.jpg" alt="Instal·lació Completa"
+                                    class="img-fluid rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalImagen15">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 1 -->
+            <div class="modal fade" id="modalImagen1" tabindex="-1" aria-labelledby="modalImagen1Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img1.jpg" class="img-fluid"
+                                alt="Descàrrega del SO Raspberry PI">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 2 -->
+            <div class="modal fade" id="modalImagen2" tabindex="-1" aria-labelledby="modalImagen2Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img2.jpg" class="img-fluid" alt="Inici de l'aplicació Imager">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 3 -->
+            <div class="modal fade" id="modalImagen3" tabindex="-1" aria-labelledby="modalImagen3Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img3.jpg" class="img-fluid"
+                                alt="Selecció del model de Raspberry Pi">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 4 -->
+            <div class="modal fade" id="modalImagen4" tabindex="-1" aria-labelledby="modalImagen4Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img4.jpg" class="img-fluid" alt="Selecció del sistema operatiu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 5 -->
+            <div class="modal fade" id="modalImagen5" tabindex="-1" aria-labelledby="modalImagen5Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img5.jpg" class="img-fluid"
+                                alt="Connexió del dispositiu d'emmagatzematge">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 6 -->
+            <div class="modal fade" id="modalImagen6" tabindex="-1" aria-labelledby="modalImagen6Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img6.jpg" class="img-fluid"
+                                alt="Selecció del dispositiu d'emmagatzematge">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 7 -->
+            <div class="modal fade" id="modalImagen7" tabindex="-1" aria-labelledby="modalImagen7Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img7.jpg" class="img-fluid" alt="Clic a Next">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 8 -->
+            <div class="modal fade" id="modalImagen8" tabindex="-1" aria-labelledby="modalImagen8Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img8.jpg" class="img-fluid"
+                                alt="Personalització del sistema operatiu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal para Imagen 9 -->
+            <div class="modal fade" id="modalImagen9" tabindex="-1" aria-labelledby="modalImagen9Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img9.jpg" class="img-fluid" alt="Serveis">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 10 -->
+            <div class="modal fade" id="modalImagen10" tabindex="-1" aria-labelledby="modalImagen10Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img10.jpg" class="img-fluid" alt="Opcions d'Escriptura">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 11 -->
+            <div class="modal fade" id="modalImagen11" tabindex="-1" aria-labelledby="modalImagen11Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img11.jpg" class="img-fluid" alt="Escriptura de la Imatge">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 12 -->
+            <div class="modal fade" id="modalImagen12" tabindex="-1" aria-labelledby="modalImagen12Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img12.jpg" class="img-fluid" alt="Procés d'Instal·lació">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 13 -->
+            <div class="modal fade" id="modalImagen13" tabindex="-1" aria-labelledby="modalImagen13Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img13.jpg" class="img-fluid" alt="Progrés de la Instal·lació">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 14 -->
+            <div class="modal fade" id="modalImagen14" tabindex="-1" aria-labelledby="modalImagen14Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img14.jpg" class="img-fluid" alt="Progrés de la Instal·lació">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para Imagen 15 -->
+            <div class="modal fade" id="modalImagen15" tabindex="-1" aria-labelledby="modalImagen15Label"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="imgs/InstalacioSO/img15.jpg" class="img-fluid" alt="Instal·lació Completa">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+
+        <!-- Pie de Página -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; 2025 Mi Proyecto | Creado por Andy Benites & Henri bances</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

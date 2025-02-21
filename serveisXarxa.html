@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>serveisXarxa</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!-- Barra de Navegación con Submenú -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Raspberry PI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!-- servicios de xarxa -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Serveis de xarxa
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="bin9.html">BIND9</a></li>
+                                <li><a class="dropdown-item" href="apache.html">APACHE</a></li>
+                            </ul>
+                        </li>
+
+
+                        <!-- Submenú de Backups -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Interficies
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="interfacecitadel.html">Interficie cital</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sección de Bienvenida -->
+        <header class="bg-primary text-white text-center py-5">
+            <h1>Proyecte amb Raspberry PI 4</h1>
+        </header>
+
+        <!-- Contenido Principal -->
+        <div class="container my-5">
+            <!-- Bloque Citadel -->
+            <h2 class="text-center mb-4">Instal·lació de Citadel</h2>
+
+            <!-- Introducción -->
+            <p class="lead text-center mb-5">Per instal·lar el servidor de correu electrònic Citadel, segueix aquests
+                passos.</p>
+            <div class="accordion" id="citadelAccordion">
+
+                <!-- Paso 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel1" aria-expanded="true" aria-controls="collapseCitadel1">
+                            <i class="bi bi-terminal me-2"></i> Pas 1: Instal·lació dels paquets necessaris
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel1" class="accordion-collapse collapse show" aria-labelledby="citadelPaso1"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p>Instal·lació del servidor de correu electrònic Citadel. Instal·lem els paquets necessaris
+                                per compilar el programari Citadel a la Raspberry Pi.</p>
+                            <p>Compilarem Citadel localment ja que pot haver-hi diversos problemes amb la compilació
+                                proporcionada des del repositori Raspbian.</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>sudo apt install build-essential curl g++ gettext shared-mime-info libssl-dev zlib1g-dev</code>
+                            </div>
+                            <img src="imgs/Citadel/img1.png" alt="Descàrrega de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel2" aria-expanded="false" aria-controls="collapseCitadel2">
+                            <i class="bi bi-cloud-download me-2"></i> Pas 2: Descarregar i instal·lar Citadel
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel2" class="accordion-collapse collapse" aria-labelledby="citadelPaso2"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p>Iniciar el procés d'instal·lació de Citadel amb l'ordre següent:</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>curl https://easyinstall.citadel.org/install | sudo bash</code>
+                            </div>
+                            <img src="imgs/Citadel/img2.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel3" aria-expanded="false" aria-controls="collapseCitadel3">
+                            <i class="bi bi-gear me-2"></i> Pas 3: Configuració inicial de Citadel
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel3" class="accordion-collapse collapse" aria-labelledby="citadelPaso3"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p>Quan se us demani que accepteu els termes i les condicions, premeu <code>Y</code> luego
+                                <code>ENTER</code> per continuar.
+                            </p>
+
+                            <p>se us demanarà si voleu que l'script instal·li algun paquet addicional que Citadel pugui
+                                necessitar.
+
+                                Novament, premeu I, seguit de ENTER per continuar.
+
+                                El procés d'instal·lació portarà algun temps, per això ara és un bon moment per prendre
+                                un cafè mentre el teu Raspberry Pi treballa.</p>
+                            <img src="imgs/Citadel/img3.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel4" aria-expanded="false" aria-controls="collapseCitadel4">
+                            <i class="bi bi-check-circle me-2"></i> Pas 4: Citadel hagi acabat d'instal·lar-se
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel4" class="accordion-collapse collapse" aria-labelledby="citadelPaso4"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p>Quan Citadel hagi acabat d'instal·lar-se, haureu de configurar el programari.</p>
+
+                            <img src="imgs/Citadel/img4.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel4">
+
+                            <hr>
+                            <p>us demanarà que establiu un nom d'usuari per al vostre usuari administrador. Per defecte,
+                                aquest usuari es dirà admin.
+
+                                Si voleu utilitzar un nom d'usuari diferent per a l'administrador, podeu introduir-lo en
+                                aquest pas. En cas contrari, podeu prémer l' <code>ENTER</code> tecla per continuar.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Paso 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel5" aria-expanded="false" aria-controls="collapseCitadel5">
+                            <i class="bi bi-person-plus me-2"></i> Pas 5: Afegir usuaris i Contraseya
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel5" class="accordion-collapse collapse" aria-labelledby="citadelPaso5"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p>A continuació se us demanarà que introduïu una contrasenya per al vostre usuari
+                                administrador.
+
+                                La contrasenya per defecte és citadel.Us recomanem que la canvieu per una altra de més
+                                segura.</p>
+
+                            <img src="imgs/Citadel/img5.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel5">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Paso 6 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel6" aria-expanded="false" aria-controls="collapseCitadel6">
+                            <i class="bi bi-shield-check me-2"></i> Pas 6: especificar l'usuari sota el qual s'executarà
+                            el programari Citadel
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel6" class="accordion-collapse collapse" aria-labelledby="citadelPaso6"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Necessitarem especificar l'usuari sota el qual s'executarà el programari
+                                    Citadel</strong>.
+
+                                <br>
+                                Per defecte, Citadel intentarà executar-se sota el root usuari si no se n'especifica
+                                cap.
+
+                                Per a aquesta opció, assegureu-vos d'escriure “ citadel“. Premeu l' <code>ENTER</code>
+                                tecla per confirmar el canvi d'opció.
+                            </p>
+
+
+                            <img src="imgs/Citadel/img6.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel6">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 7 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso7">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel7" aria-expanded="false" aria-controls="collapseCitadel7">
+                            <i class="bi bi-hdd-network me-2"></i> Pas 7: Configuració de la xarxa
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel7" class="accordion-collapse collapse" aria-labelledby="citadelPaso7"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p><strong>En aquest pas, podeu introduir una adreça IP perquè el servidor Citadel
+                                    escolti.</strong></p>
+                            <p>Aquesta opció és útil si només voleu que s'accedeixi a Citadel mitjançant una adreça IP
+                                específica. Per defecte, Citadel escoltarà a totes les adreces.</p>
+
+                            <img src="imgs/Citadel/img7.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel7">
+                            <br>
+                            <hr>
+                            <p>Per a aquesta opció, pressionarem <code>ENTER</code> per mantenir la configuració
+                                predeterminada.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 8 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso8">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel8" aria-expanded="false" aria-controls="collapseCitadel8">
+                            <i class="bi bi-ethernet me-2"></i> Pas 8: especificar el port on voleu que s'executi
+                            Citadel
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel8" class="accordion-collapse collapse" aria-labelledby="citadelPaso8"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p><strong>En aquest pas és especificar el port on voleu que s'executi Citadel.</strong></p>
+                            <p>Només heu de canviar aquest port per defecte 504 si esteu executant diverses instàncies
+                                de Citadel en un servidor.</p>
+
+                            <img src="imgs/Citadel/img8.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel8">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Paso 9 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel9" aria-expanded="false" aria-controls="collapseCitadel9">
+                            <i class="bi bi-shield-lock me-2"></i> Pas 9: mètode d'autenticació
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel9" class="accordion-collapse collapse" aria-labelledby="citadelPaso9"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p><strong>En aquest pas se us demanarà que definiu el mètode d'autenticació.</strong></p>
+                            <p>A menys que tingueu una necessitat específica per a les altres tres opcions, és més segur
+                                deixar aquesta configuració a la <code>0</code> opció predeterminada.</p>
+
+                            <img src="imgs/Citadel/img9.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel9">
+                            <hr>
+                            <p>Premeu l' <code>ENTER</code> tecla per continuar amb el pas final.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Paso 10 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="citadelPaso10">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCitadel10" aria-expanded="false" aria-controls="collapseCitadel10">
+                            <i class="bi bi-window me-2"></i> Pas 10: passos finals, definirem els ports per a
+                            la interfície web de Citadel a la nostra Raspberry Pi
+                        </button>
+                    </h2>
+                    <div id="collapseCitadel10" class="accordion-collapse collapse" aria-labelledby="citadelPaso10"
+                        data-bs-parent="#citadelAccordion">
+                        <div class="accordion-body">
+                            <p><strong>En aquests passos finals, definirem els ports per a la interfície web de Citadel
+                                    a la nostra Raspberry Pi.</strong></p>
+                            <p>Si no esteu executant un altre servidor web, com Apache, és millor configurar HTTP al
+                                port <strong>80</strong> i HTTPS al port <strong>443.</strong>
+                            </p>
+
+                            <img src="imgs/Citadel/img10.png" alt="Configuració de Citadel"
+                                class="img-fluid rounded shadow mt-3" data-bs-toggle="modal"
+                                data-bs-target="#modalCitadel10">
+                            <br>
+                            <hr>
+                            <p>És el nostre cas configurem el port HTTP 8080 a i el port HTTPS 8443 a</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Pie de Página -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; 2025 Mi Proyecto | Creado por Andy Benites & Henri Bances</p>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

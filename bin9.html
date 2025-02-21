@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>serveisXarxa</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <!-- Barra de Navegación con Submenú -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Raspberry PI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!-- servicios de xarxa -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Serveis de xarxa
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="bin9.html">BIND9</a></li>
+                                <li><a class="dropdown-item" href="apache.html">APACHE</a></li>
+                                <li><a class="dropdown-item" href="serveisXarxa.html">CITADEL</a></li>
+                            </ul>
+                        </li>
+
+
+                        <!-- Submenú de Backups -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Interficies
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="interfacecitadel.html">Interficie cital</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sección de Bienvenida -->
+        <header class="bg-primary text-white text-center py-5">
+            <h1>Proyecte amb Raspberry PI 4</h1>
+        </header>
+
+        <!-- bloque BIND9 -->
+
+
+        <!-- Contenido Principal -->
+        <div class="container my-5">
+            <!-- Bloque BIND9 -->
+            <h2 class="text-center mb-4">Instal·lar i configurar servei dns Bind9</h2>
+
+            <!-- Introducción -->
+            <p class="lead text-center mb-5">Utilitzarem BIND9 com a servidor DNS per gestionar el domini
+                mailcapa.sytes.net. Això permetrà a la Raspberry resoldre les consultes d'aquest domini i que altres
+                dispositius que estiguin connectats a la mateixa xarxa puguin utilitzar-lo per a la resolució de noms.
+            </p>
+            <div class="accordion" id="bind9Accordion">
+
+                <!-- Paso 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="bind9Paso1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBind91" aria-expanded="true" aria-controls="collapseBind91">
+                            <i class="bi bi-terminal me-2"></i> Pas 1: Actualitzar els repositoris del sistema
+                        </button>
+                    </h2>
+                    <div id="collapseBind91" class="accordion-collapse collapse show" aria-labelledby="bind9Paso1"
+                        data-bs-parent="#bind9Accordion">
+                        <div class="accordion-body">
+                            <p>Actualitza els repositoris del sistema amb l'ordre següent:</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>sudo apt update</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="bind9Paso2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBind92" aria-expanded="false" aria-controls="collapseBind92">
+                            <i class="bi bi-box-arrow-in-down me-2"></i> Pas 2: Instal·lar BIND9
+                        </button>
+                    </h2>
+                    <div id="collapseBind92" class="accordion-collapse collapse" aria-labelledby="bind9Paso2"
+                        data-bs-parent="#bind9Accordion">
+                        <div class="accordion-body">
+                            <p>Instal·la els paquets necessaris per a BIND9 amb l'ordre següent:</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>sudo apt install bind9 bind9utils bind9-doc dnsutils</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="bind9Paso3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBind93" aria-expanded="false" aria-controls="collapseBind93">
+                            <i class="bi bi-search me-2"></i> Pas 3: Verificar instal·lació
+                        </button>
+                    </h2>
+                    <div id="collapseBind93" class="accordion-collapse collapse" aria-labelledby="bind9Paso3"
+                        data-bs-parent="#bind9Accordion">
+                        <div class="accordion-body">
+                            <p>Verifica si BIND9 està instal·lat correctament amb aquesta comanda:</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>sudo systemctl status bind9</code>
+                            </div>
+                            <p><strong>Imatge del procés:</strong></p>
+                            <img src="imgs/bind9/img1.png" alt="Verificar instal·lació de BIND9"
+                                class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="bind9Paso4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBind94" aria-expanded="false" aria-controls="collapseBind94">
+                            <i class="bi bi-pencil me-2"></i> Pas 4: Configuració de zones
+                        </button>
+                    </h2>
+                    <div id="collapseBind94" class="accordion-collapse collapse" aria-labelledby="bind9Paso4"
+                        data-bs-parent="#bind9Accordion">
+                        <div class="accordion-body">
+                            <p>Edita la configuració de zones amb la següent comanda:</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>sudo nano /etc/bind/named.conf.local</code>
+                            </div>
+                            <br>
+                            <p>Afegir la configuració per declarar la zona DNS del domini:</p>
+                            <p><strong>Imatge del procés:</strong></p>
+                            <img src="imgs/bind9/img2.png" alt="Configuració de zones de BIND9"
+                                class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="bind9Paso5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBind95" aria-expanded="false" aria-controls="collapseBind95">
+                            <i class="bi bi-pencil me-2"></i> Pas 5: Creació de l'arxiu de la zona DNS
+                        </button>
+                    </h2>
+                    <div id="collapseBind95" class="accordion-collapse collapse" aria-labelledby="bind9Paso5"
+                        data-bs-parent="#bind9Accordion">
+                        <div class="accordion-body">
+                            <p>Crear la carpeta on estarà la zona:</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>sudo mkdir /etc/bind/zones</code>
+                            </div>
+                            <br>
+                            <p>Crear arxiu:</p>
+                            <div class="bg-dark text-light p-3 rounded">
+                                <code>sudo cp db.local /etc/bind/zones/mailcapa.sytes.net.zone</code>
+                            </div>
+                            <br>
+                            <p><strong>Imatge del procés:</strong></p>
+                            <img src="imgs/bind9/img3.png" alt="Creació de l'arxiu de la zona DNS"
+                                class="img-fluid rounded shadow">
+                            <br>
+                            <br>
+                            <ul>
+                                <li><strong>NS:</strong> Indica que mailcapa.sytes.net serà el servidor DNS del domini.
+                                </li>
+                                <li><strong>A:</strong> Assigna una IP a mailcapa.sytes.net.</li>
+                                <li><strong>MX:</strong> Defineix el servidor de correu com mail.mailcapa.sytes.net.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="bind9Paso9">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBind99" aria-expanded="false" aria-controls="collapseBind99">
+                            <i class="bi bi-pencil me-2"></i> Pas 6: Comprovar el funcionament des d'un altre dispositiu
+                        </button>
+                    </h2>
+                    <div id="collapseBind99" class="accordion-collapse collapse" aria-labelledby="bind9Paso9"
+                        data-bs-parent="#bind9Accordion">
+                        <div class="accordion-body">
+                            <p>Des d'un altre dispositiu a la mateixa xarxa, comprova que la resolució de noms funciona
+                                amb:</p>
+                            <div class="bg-dark text-light p-3 rounded mt-3">
+                                <code>mailcapa.sytes.net</code>
+                            </div>
+                            <br>
+                            <p><strong>Imatge del procés:</strong></p>
+                            <img src="imgs/bind9/img4.png" alt="Comprovació del funcionament"
+                                class="img-fluid rounded shadow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de Página -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>&copy; 2025 Mi Proyecto | Creado por Andy Benites & Henri Bances</p>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>
